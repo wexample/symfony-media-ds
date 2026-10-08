@@ -1,5 +1,5 @@
 {#- The one block this package adds to the form theme: a field picking media
-    in the library, opened in a modal. -#}
+    in the library, opened in a modal or a panel. -#}
 {% block media_picker_widget %}
     {% set label_key = form.vars.label is same as(false)
         ? form.vars.name
@@ -24,7 +24,8 @@
             modelValue: value,
             multiple: form.vars.multiple,
             selected: form.vars.selected,
-            library: media_library_options({ multiple: form.vars.multiple, picker: true, state_id: 'media-picker' }),
+            libraryUrl: media_library_url(),
+            target: form.vars.target,
             labels: media_picker_labels(),
             translate: false
         }

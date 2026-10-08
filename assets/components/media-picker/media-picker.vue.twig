@@ -5,10 +5,6 @@
     {{ trans_js(render_pass, 'WexampleSymfonyMediaDsBundle.components.media-picker.media-picker::*') }}
 {%- endblock -%}
 
-{%- block vue_require -%}
-    {{- vue_require(render_pass, '@WexampleSymfonyMediaDsBundle/components/media-library') -}}
-{%- endblock -%}
-
 {%- block field_control -%}
     <div class="media-picker">
         {#- The ids the form submits. -#}

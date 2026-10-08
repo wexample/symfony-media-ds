@@ -16,10 +16,10 @@ use Wexample\SymfonyMediaDs\Form\DataTransformer\MediaPickerTransformer;
 /**
  * A field whose value is one media (`multiple: false`, a ManyToOne) or
  * several (`multiple: true`, a ManyToMany), picked in the media library,
- * which opens in a modal:
+ * which opens in a modal or, `target: panel`, a panel:
  *
  *     $builder->add('cover', MediaPickerType::class);
- *     $builder->add('attachments', MediaPickerType::class, ['multiple' => true]);
+ *     $builder->add('attachments', MediaPickerType::class, ['multiple' => true, 'target' => 'panel']);
  */
 class MediaPickerType extends AbstractType
 {
@@ -45,6 +45,7 @@ class MediaPickerType extends AbstractType
         $media = $options['multiple'] ? [...($data ?? [])] : array_filter([$data]);
 
         $view->vars['multiple'] = $options['multiple'];
+        $view->vars['target'] = $options['target'];
         // What the field shows before anything is picked: the ids it posts
         // say nothing to the person reading it.
         $view->vars['selected'] = array_map(fn (Media $item) => $this->library->describe($item), $media);
@@ -54,10 +55,12 @@ class MediaPickerType extends AbstractType
     {
         $resolver->setDefaults([
             'multiple' => false,
+            'target' => 'modal',
             'compound' => false,
             'invalid_message' => 'This media cannot be found.',
         ]);
         $resolver->setAllowedTypes('multiple', 'bool');
+        $resolver->setAllowedValues('target', ['modal', 'panel']);
     }
 
     public function getParent(): string

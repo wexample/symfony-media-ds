@@ -50,6 +50,7 @@ class MediaLibraryExtension extends AbstractExtension
     {
         return [
             new TwigFunction('media_library_options', $this->options(...)),
+            new TwigFunction('media_library_url', fn () => $this->urlGenerator->generate('media_library_index')),
             new TwigFunction('media_picker_labels', fn () => $this->labels(
                 'WexampleSymfonyMediaDsBundle.components.media-picker.media-picker',
                 ['pick', 'replace', 'remove', 'library']
@@ -67,7 +68,7 @@ class MediaLibraryExtension extends AbstractExtension
     }
 
     /**
-     * @param array{multiple?: bool, state_id?: string|null, picker?: bool} $options
+     * @param array{multiple?: bool, state_id?: string|null, picker?: bool, field?: string} $options
      *
      * @return array<string, mixed>
      */
@@ -91,6 +92,8 @@ class MediaLibraryExtension extends AbstractExtension
             'chunkSize' => $this->uploadReceiver->chunkSize(),
             'multiple' => $options['multiple'] ?? true,
             'picker' => $options['picker'] ?? false,
+            // The id of the field a picker answers.
+            'field' => $options['field'] ?? '',
             'stateId' => $options['state_id'] ?? 'media-library',
             'labels' => $this->labels(self::LABELS_DOMAIN, self::LABELS),
         ];

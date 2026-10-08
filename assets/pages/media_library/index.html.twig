@@ -3,5 +3,10 @@
 {%- set page_show_title = true -%}
 
 {%- block page_body -%}
-    {{ vue(render_pass, '@WexampleSymfonyMediaDsBundle/components/media-library', media_library_options()) }}
+    {{ vue(render_pass, '@WexampleSymfonyMediaDsBundle/components/media-library', media_library_options({
+        picker: picker,
+        multiple: multiple,
+        field: field,
+        state_id: picker ? 'media-picker' : 'media-library',
+    })) }}
 {%- endblock -%}

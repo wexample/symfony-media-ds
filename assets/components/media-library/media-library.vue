@@ -9,8 +9,10 @@ const PAGE_LENGTH = 60;
 // The media library: symfony-design-system's file explorer, fed by
 // symfony-media's API, with what arranging it takes — an upload into the
 // folder shown, a new folder, a rename, a deletion — for whoever may manage
-// it. As a picker (`picker`), it adds the way to choose what is selected,
-// and says what was chosen (`choose`, the media items).
+// it. As a picker (`picker`) — the page opened by a media field in a modal
+// or a panel —, it adds the way to choose what is selected, tells the field
+// (`media-library:choose`, with its id and the media items), and closes the
+// page as a form does once sent.
 export default {
   template: '#vue-template-wexample-symfony-media-ds-bundle-components-media-library-media-library',
 
@@ -27,6 +29,8 @@ export default {
     chunkSize: { type: Number, default: null },
     multiple: { type: Boolean, default: true },
     picker: { type: Boolean, default: false },
+    // The id of the field a picker answers.
+    field: { type: String, default: '' },
     stateId: { type: String, default: 'media-library' },
     // The wording, resolved by the server (media_library_options()).
     labels: { type: Object, default: () => ({}) }
@@ -98,7 +102,7 @@ export default {
     // A media opened is shown in a new tab; in a picker, it is chosen.
     onOpen(item) {
       if (this.picker) {
-        this.$emit('choose', [item]);
+        this.answer([item]);
       } else {
         window.open(item.url, '_blank', 'noopener');
       }
@@ -106,8 +110,18 @@ export default {
 
     choose() {
       if (this.chosenFiles.length) {
-        this.$emit('choose', this.chosenFiles);
+        this.answer(this.chosenFiles);
       }
+    },
+
+    answer(items) {
+      this.$emit('choose', items);
+      this.app.services.events.trigger('media-library:choose', { field: this.field, items });
+      // Closed as a form closes the modal or the panel it was sent from.
+      this.$el.dispatchEvent(new CustomEvent('embed:close', {
+        bubbles: true,
+        detail: { source: { el: this.$el }, instant: false }
+      }));
     },
 
     refresh() {

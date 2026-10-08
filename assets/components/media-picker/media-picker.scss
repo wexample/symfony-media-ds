@@ -60,8 +60,3 @@
   gap: var(--space-1);
   align-items: center;
 }
-
-// The library in its modal takes the room it is given.
-.media-picker--library {
-  min-width: min(64rem, 90vw);
-}
