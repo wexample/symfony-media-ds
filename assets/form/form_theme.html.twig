@@ -1,0 +1,31 @@
+{#- The one block this package adds to the form theme: a field picking media
+    in the library, opened in a modal. -#}
+{% block media_picker_widget %}
+    {% set label_key = form.vars.label is same as(false)
+        ? form.vars.name
+        : (form.vars.label ?? form.vars.name)
+    %}
+    {% if label_key is same as(true) %}
+        {% set label_key = 'field.' ~ form.vars.name ~ '.label' %}
+    {% endif %}
+    {% set label_value = form.vars.translation_domain is same as(false)
+        ? label_key
+        : label_key|trans({}, form.vars.translation_domain)
+    %}
+    {{ vue(
+        render_pass,
+        '@WexampleSymfonyMediaDsBundle/components/media-picker',
+        {
+            name: full_name,
+            id: id,
+            label: label_value,
+            required: required,
+            disabled: disabled ?? false,
+            modelValue: value,
+            multiple: form.vars.multiple,
+            selected: form.vars.selected,
+            library: media_library_options({ multiple: form.vars.multiple, picker: true, state_id: 'media-picker' }),
+            translate: false
+        }
+    ) }}
+{% endblock %}

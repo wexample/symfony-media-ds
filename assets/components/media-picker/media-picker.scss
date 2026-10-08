@@ -1,0 +1,67 @@
+// What the field holds, a thumbnail and a name each, then the way to the
+// library.
+.media-picker {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  align-items: flex-start;
+}
+
+.media-picker--items {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.media-picker--item {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  max-width: 16rem;
+  padding: var(--space-1) var(--space-1) var(--space-1) var(--space-1);
+  border: var(--border-default);
+  border-radius: var(--radius-box);
+  background: var(--surface-1);
+}
+
+.media-picker--thumbnail,
+.media-picker--icon {
+  flex: none;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: var(--radius-box);
+}
+
+.media-picker--thumbnail {
+  object-fit: cover;
+}
+
+.media-picker--icon {
+  display: grid;
+  place-items: center;
+  color: var(--text-color-muted);
+  background: var(--tint-2);
+}
+
+.media-picker--name {
+  min-width: 0;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  font-size: var(--font-size-2);
+  color: inherit;
+}
+
+.media-picker--open {
+  display: inline-flex;
+  gap: var(--space-1);
+  align-items: center;
+}
+
+// The library in its modal takes the room it is given.
+.media-picker--library {
+  min-width: min(64rem, 90vw);
+}

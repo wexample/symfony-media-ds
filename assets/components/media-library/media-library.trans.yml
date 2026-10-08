@@ -1,0 +1,23 @@
+en:
+  upload: Add files
+  new_folder: New folder
+  rename: Rename
+  save: Save
+  cancel: Cancel
+  choose: 'Choose (%count%)'
+  delete:
+    action: Delete
+    title: Delete
+    message: 'Delete %count% item(s)? A folder must be empty first.'
+
+fr:
+  upload: Ajouter des fichiers
+  new_folder: Nouveau dossier
+  rename: Renommer
+  save: Enregistrer
+  cancel: Annuler
+  choose: 'Choisir (%count%)'
+  delete:
+    action: Supprimer
+    title: Supprimer
+    message: 'Supprimer %count% élément(s) ? Un dossier doit d''abord être vide.'

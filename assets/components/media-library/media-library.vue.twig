@@ -1,0 +1,51 @@
+{%- extends '@WexampleSymfonyDesignSystemBundle/components/_abstract/vue/vue.vue.twig' -%}
+
+{%- block vue_require -%}
+    {{- vue_require(render_pass, '@WexampleSymfonyDesignSystemBundle/components/file-explorer') -}}
+{%- endblock -%}
+
+{%- block vue_config -%}
+    {{ parent() }}
+    {{ trans_js(render_pass, 'WexampleSymfonyMediaDsBundle.components.media-library.media-library::*') }}
+{%- endblock -%}
+
+{%- block vue_body -%}
+    <div class="media-library" :class="{ 'media-library--picker': picker }">
+        <file-explorer
+                ref="explorer"
+                :load-children="loadChildren"
+                :state-id="stateId"
+                :multiple="multiple"
+                default-view="grid"
+                @navigate="(path) => { folder = path ? { path } : null; onNavigate(); }"
+                @select="onSelect"
+                @open="onOpen"
+        >
+            <template v-if="canManage" #actions>
+                <input ref="files" type="file" multiple hidden @change="onFilesPicked">
+                <button type="button" class="toolbar--action" :aria-label="t('upload')" :data-tooltip="t('upload')" @click="pickFiles" v-html="renderIcon('ph:bold/upload-simple')"></button>
+                <button type="button" class="toolbar--action" :aria-label="t('new_folder')" :data-tooltip="t('new_folder')" @click="startNaming('folder')" v-html="renderIcon('ph:bold/folder-plus')"></button>
+                <button type="button" class="toolbar--action" :disabled="selected.length !== 1" :aria-label="t('rename')" :data-tooltip="t('rename')" @click="startNaming('rename')" v-html="renderIcon('ph:bold/pencil-simple')"></button>
+                <button type="button" class="toolbar--action" :disabled="!selected.length" :aria-label="t('delete.action')" :data-tooltip="t('delete.action')" @click="remove" v-html="renderIcon('ph:bold/trash')"></button>
+            </template>
+        </file-explorer>
+
+        {#- A folder being named, or an item renamed: one line under the
+            explorer, Enter to keep it, Escape to let it go. -#}
+        <form v-if="naming" class="media-library--naming toolbar toolbar--compact" @submit.prevent="submitName">
+            <input ref="name"
+                   v-model="naming.name"
+                   class="form--input"
+                   :placeholder="naming.mode === 'rename' ? t('rename') : t('new_folder')"
+                   @keydown.escape="naming = null">
+            <button type="submit" class="button button--compact">[[ t('save') ]]</button>
+            <button type="button" class="button button--flat button--compact" @click="naming = null">[[ t('cancel') ]]</button>
+        </form>
+
+        <div v-if="picker" class="media-library--choose">
+            <button type="button" class="button" :disabled="!chosenFiles.length" @click="choose">
+                [[ t('choose', { '%count%': chosenFiles.length }) ]]
+            </button>
+        </div>
+    </div>
+{%- endblock -%}

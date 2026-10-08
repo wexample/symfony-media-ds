@@ -1,0 +1,23 @@
+// The explorer, then what is being named, then — in a picker — the way to
+// choose, kept at the foot.
+.media-library {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  min-height: 0;
+}
+
+.media-library--naming {
+  display: flex;
+  gap: var(--space-2);
+  align-items: center;
+
+  .form--input {
+    flex: 1;
+  }
+}
+
+.media-library--choose {
+  display: flex;
+  justify-content: flex-end;
+}

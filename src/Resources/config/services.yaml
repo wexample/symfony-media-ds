@@ -1,0 +1,14 @@
+services:
+    _defaults:
+        autowire: true
+        autoconfigure: true
+        public: false
+
+    Wexample\SymfonyMediaDs\:
+        resource: '../../{EventSubscriber,Form,Twig}'
+        # Built by MediaPickerType with the field's options.
+        exclude: '../../Form/DataTransformer'
+
+    Wexample\SymfonyMediaDs\Controller\:
+        resource: '../../Controller/'
+        tags: ['controller.service_arguments']

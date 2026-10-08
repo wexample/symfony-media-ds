@@ -1,0 +1,13 @@
+framework:
+  form: true
+
+wexample_symfony_media:
+  storage_dir: '%kernel.project_dir%/var/media'
+
+services:
+  # The two upload services of symfony-design-system the library uses, without
+  # the whole design system around them.
+  Wexample\SymfonyDesignSystem\Service\UploadTokenService:
+    autowire: true
+  Wexample\SymfonyDesignSystem\Service\ChunkedUploadReceiver:
+    autowire: true
