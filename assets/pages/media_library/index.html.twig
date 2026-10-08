@@ -7,6 +7,14 @@
 {%- set page_zone_flush = true -%}
 {%- set page_zone_plain = true -%}
 
+{#- The same library elsewhere: in a modal or a panel, over the page — as a
+    field picking media opens it. -#}
+{%- block page_title_actions -%}
+    {%- set overlay_options = { closeOnEscape: true, closeOnOverlayClick: true, resizable: true, resizeState: 'media-library' } -%}
+    {{ button_target('ph:bold/app-window', 'WexampleSymfonyMediaDsBundle.pages.media_library.index::open.modal', path('media_library_index'), 'modal', { class: 'button', target_options: overlay_options }) }}
+    {{ button_target('ph:bold/sidebar-simple', 'WexampleSymfonyMediaDsBundle.pages.media_library.index::open.panel', path('media_library_index'), 'panel', { class: 'button', target_options: overlay_options }) }}
+{%- endblock -%}
+
 {%- block page_body -%}
     <div class="page--fill">
         {{ vue(render_pass, '@WexampleSymfonyMediaDsBundle/components/media-library', media_library_options({

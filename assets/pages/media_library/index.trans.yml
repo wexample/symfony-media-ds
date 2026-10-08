@@ -1,7 +1,13 @@
 en:
   page_title: Media library
   page_icon: ph:bold/images
+  open:
+    modal: Open in a modal
+    panel: Open in a panel
 
 fr:
   page_title: Médiathèque
   page_icon: ph:bold/images
+  open:
+    modal: Ouvrir dans une modale
+    panel: Ouvrir dans un panneau
