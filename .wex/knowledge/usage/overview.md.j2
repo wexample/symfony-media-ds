@@ -1,0 +1,24 @@
+## The library page
+
+`/media/` (`media_library_index`) is symfony-media's library, browsed by whoever holds `MEDIA_VIEW`: symfony-design-system's file explorer, its folders on the side, its media in a grid of thumbnails or a list. Whoever holds `MEDIA_MANAGE` also adds files to the folder shown — sent in pieces by the loader's upload queue —, makes folders, renames and deletes.
+
+The component is drawn anywhere with the options the server computes:
+
+```twig
+{{ vue(render_pass, '@WexampleSymfonyMediaDsBundle/components/media-library', media_library_options()) }}
+```
+
+`media_library_options({ multiple, picker, state_id })` gives its addresses, the actions the current user may take, a signed upload address for the library's intake directory, and its wording, resolved on the server so that the library can be drawn several times on a page.
+
+An upload lands in `<storage_dir>/intake`; `EventSubscriber\MediaUploadSubscriber` takes it from there (symfony-design-system's `UploadCompletedEvent`) into the folder its address names, and answers with the media it became.
+
+## Picking media in a form
+
+```php
+$builder->add('cover', MediaPickerType::class);                           // one media: a ManyToOne
+$builder->add('attachments', MediaPickerType::class, ['multiple' => true]); // several: a ManyToMany
+```
+
+The field shows what it holds — a thumbnail and a name each — and opens the library in a modal as a picker: a media opened, or the selection chosen, comes back to the field. What it posts is the ids, comma separated; `Form\DataTransformer\MediaPickerTransformer` turns them back into the media, a collection for several. The field joins the application's form theme by itself.
+
+symfony-media-demo shows both: the library, and an article picking its cover and its attachments.

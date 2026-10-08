@@ -27,7 +27,9 @@ export default {
     chunkSize: { type: Number, default: null },
     multiple: { type: Boolean, default: true },
     picker: { type: Boolean, default: false },
-    stateId: { type: String, default: 'media-library' }
+    stateId: { type: String, default: 'media-library' },
+    // The wording, resolved by the server (media_library_options()).
+    labels: { type: Object, default: () => ({}) }
   },
 
   emits: ['choose'],
@@ -58,7 +60,13 @@ export default {
 
   methods: {
     t(key, parameters = {}) {
-      return this.trans(`${T}${key}`, parameters);
+      const label = this.labels[key];
+
+      if (label === undefined) {
+        return this.trans(`${T}${key}`, parameters);
+      }
+
+      return Object.entries(parameters).reduce((text, [name, value]) => text.replaceAll(name, String(value)), label);
     },
 
     renderIcon(name) {

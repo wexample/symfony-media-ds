@@ -24,7 +24,9 @@ export default {
     // The media the field opens with, described as the library lists them.
     selected: { type: Array, default: () => [] },
     // The options of the library opened to pick (media_library_options()).
-    library: { type: Object, required: true }
+    library: { type: Object, required: true },
+    // The wording, resolved by the server (media_picker_labels()).
+    labels: { type: Object, default: () => ({}) }
   },
 
   data() {
@@ -43,7 +45,7 @@ export default {
 
   methods: {
     t(key, parameters = {}) {
-      return this.trans(`${T}${key}`, parameters);
+      return this.labels[key] ?? this.trans(`${T}${key}`, parameters);
     },
 
     renderIcon(name) {
@@ -57,17 +59,38 @@ export default {
       body.className = 'media-picker--library';
 
       let modal = null;
-      const vueApp = this.app.getServiceOrFail('vue').createApp(MediaLibrary, {
-        ...this.library,
-        multiple: this.multiple,
-        picker: true,
-        onChoose: (chosen) => {
-          this.take(chosen);
-          vueApp.unmount();
-          modal?.close();
+      // An app of its own, in the modal, given the props the loader gives
+      // the root of every vue it mounts: the render node it translates
+      // through — this field's —, its catalogue, and its view.
+      const vueService = this.app.getServiceOrFail('vue');
+      const vueApp = vueService.createApp(
+        {
+          ...MediaLibrary,
+          props: {
+            ...MediaLibrary.props,
+            rootComponent: { type: Object, default: null },
+            translations: { type: Object, default: null },
+            viewPath: { type: String, default: '@WexampleSymfonyMediaDsBundle/components/media-library' }
+          }
+        },
+        {
+          rootComponent: this.$root.rootComponent,
+          translations: this.$root.translations,
+          app: this.app,
+          ...this.library,
+          multiple: this.multiple,
+          picker: true,
+          onChoose: (chosen) => {
+            this.take(chosen);
+            vueApp.unmount();
+            modal?.close();
+          }
         }
-      });
+      );
 
+      // Its components by name, as the loader registers those of the vues it
+      // mounts: the explorer's tree draws its nodes by name, recursively.
+      vueService.registerComponentsRecursively(vueApp, { MediaLibrary });
       vueApp.mount(body);
       modal = await showInTarget(this.app, TARGET_MODAL, { title: this.t('library'), body });
     },
