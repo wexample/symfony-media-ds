@@ -70,7 +70,11 @@ export default {
 
       loadIntoTarget(this.app, this.target, `${this.libraryUrl}${separator}${query}`, {
         closeOnEscape: true,
-        closeOnOverlayClick: true
+        closeOnOverlayClick: true,
+        // A library is browsed: the window it opens in is sized by its edges,
+        // and keeps the size it was left at.
+        resizable: true,
+        resizeState: 'media-library'
       });
     },
 

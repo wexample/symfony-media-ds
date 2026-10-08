@@ -1,23 +1,23 @@
-// The explorer, then what is being named, then — in a picker — the way to
-// choose, kept at the foot.
+// The explorer, the whole of the page it is drawn in — full page or in a modal
+// or a panel —, then what is being named under it.
 .media-library {
   display: flex;
   flex-direction: column;
-  gap: var(--space-2);
+  height: 100%;
   min-height: 0;
+
+  > .file-explorer {
+    flex: 1;
+  }
 }
 
 .media-library--naming {
   display: flex;
   gap: var(--space-2);
   align-items: center;
+  border-top: var(--border-shell);
 
   .form--input {
     flex: 1;
   }
-}
-
-.media-library--choose {
-  display: flex;
-  justify-content: flex-end;
 }

@@ -17,6 +17,7 @@
                 :state-id="stateId"
                 :multiple="multiple"
                 default-view="grid"
+                :framed="false"
                 @navigate="(path) => { folder = path ? { path } : null; onNavigate(); }"
                 @select="onSelect"
                 @open="onOpen"
@@ -27,6 +28,11 @@
                 <button type="button" class="toolbar--action" :aria-label="t('new_folder')" :data-tooltip="t('new_folder')" @click="startNaming('folder')" v-html="renderIcon('ph:bold/folder-plus')"></button>
                 <button type="button" class="toolbar--action" :disabled="selected.length !== 1" :aria-label="t('rename')" :data-tooltip="t('rename')" @click="startNaming('rename')" v-html="renderIcon('ph:bold/pencil-simple')"></button>
                 <button type="button" class="toolbar--action" :disabled="!selected.length" :aria-label="t('delete.action')" :data-tooltip="t('delete.action')" @click="remove" v-html="renderIcon('ph:bold/trash')"></button>
+            </template>
+            <template v-if="picker" #status>
+                <button type="button" class="button button--compact" :disabled="!chosenFiles.length" @click="choose">
+                    [[ t('choose', { '%count%': chosenFiles.length }) ]]
+                </button>
             </template>
         </file-explorer>
 
@@ -42,10 +48,5 @@
             <button type="button" class="button button--flat button--compact" @click="naming = null">[[ t('cancel') ]]</button>
         </form>
 
-        <div v-if="picker" class="media-library--choose">
-            <button type="button" class="button" :disabled="!chosenFiles.length" @click="choose">
-                [[ t('choose', { '%count%': chosenFiles.length }) ]]
-            </button>
-        </div>
     </div>
 {%- endblock -%}

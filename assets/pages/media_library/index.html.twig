@@ -1,12 +1,17 @@
 {%- extends '@front/layouts/private/layout.html.twig' -%}
 
 {%- set page_show_title = true -%}
+{#- The library is the whole of the page, edge to edge: the zone or the modal
+    it is drawn in is its frame. -#}
+{%- set page_zone_flush = true -%}
 
 {%- block page_body -%}
-    {{ vue(render_pass, '@WexampleSymfonyMediaDsBundle/components/media-library', media_library_options({
-        picker: picker,
-        multiple: multiple,
-        field: field,
-        state_id: picker ? 'media-picker' : 'media-library',
-    })) }}
+    <div class="page--fill">
+        {{ vue(render_pass, '@WexampleSymfonyMediaDsBundle/components/media-library', media_library_options({
+            picker: picker,
+            multiple: multiple,
+            field: field,
+            state_id: picker ? 'media-picker' : 'media-library',
+        })) }}
+    </div>
 {%- endblock -%}
