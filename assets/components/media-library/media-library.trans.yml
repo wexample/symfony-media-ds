@@ -5,6 +5,9 @@ en:
   save: Save
   cancel: Cancel
   choose: 'Choose (%count%)'
+  crop:
+    as_is: Send it whole
+    cropped: Crop and send
   delete:
     action: Delete
     title: Delete
@@ -17,6 +20,9 @@ fr:
   save: Enregistrer
   cancel: Annuler
   choose: 'Choisir (%count%)'
+  crop:
+    as_is: Envoyer telle quelle
+    cropped: Recadrer et envoyer
   delete:
     action: Supprimer
     title: Supprimer

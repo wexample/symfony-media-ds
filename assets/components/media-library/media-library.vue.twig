@@ -2,6 +2,7 @@
 
 {%- block vue_require -%}
     {{- vue_require(render_pass, '@WexampleSymfonyDesignSystemBundle/components/file-explorer') -}}
+    {{- vue_require(render_pass, '@WexampleSymfonyDesignSystemBundle/components/image-crop') -}}
 {%- endblock -%}
 
 {%- block vue_config -%}
@@ -12,6 +13,7 @@
 {%- block vue_body -%}
     <div class="media-library" :class="{ 'media-library--picker': picker }">
         <file-explorer
+                v-show="!cropping"
                 ref="explorer"
                 :load-children="loadChildren"
                 :state-id="stateId"
@@ -37,6 +39,21 @@
                 </button>
             </template>
         </file-explorer>
+
+        {#- One image picked: what part of it to keep, in place of the
+            listing, before it is sent — or all of it. -#}
+        <div v-if="cropping" class="media-library--crop">
+            <div class="media-library--crop-stage">
+                <image-crop ref="cropper" :src="cropping.url"></image-crop>
+            </div>
+            <div class="toolbar toolbar--compact media-library--crop-actions">
+                <div class="toolbar--group">
+                    <button type="button" class="button button--flat button--compact" @click="endCrop(null)">[[ t('cancel') ]]</button>
+                    <button type="button" class="button button--compact" @click="endCrop(false)">[[ t('crop.as_is') ]]</button>
+                    <button type="button" class="button button--invert button--compact" @click="endCrop(true)">[[ t('crop.cropped') ]]</button>
+                </div>
+            </div>
+        </div>
 
         {#- A folder being named, or an item renamed: one line under the
             explorer, Enter to keep it, Escape to let it go. -#}

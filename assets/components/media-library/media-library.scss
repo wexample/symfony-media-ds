@@ -11,6 +11,34 @@
   }
 }
 
+.media-library--crop {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  min-height: 0;
+}
+
+// The image as large as the library leaves room for, in its middle.
+.media-library--crop-stage {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 0;
+  padding: var(--space-3);
+
+  .image-crop {
+    --image-crop-max-height: 60vh;
+  }
+}
+
+// At the end of the line, as a form's actions: the toolbar's own spacing
+// would leave them at its start.
+.toolbar.media-library--crop-actions {
+  justify-content: flex-end;
+  border-top: var(--border-shell);
+}
+
 .media-library--naming {
   display: flex;
   gap: var(--space-2);

@@ -1,7 +1,11 @@
 <script>
 import FileExplorer from '@wexample/symfony-design-system/components/file-explorer/file-explorer.vue';
+import ImageCrop from '@wexample/symfony-design-system/components/image-crop/image-crop.vue';
 import { unwrapApiEnvelope } from '@wexample/js-api-entity/Common/ApiEnvelope';
 import { imageShrinkFile } from '@wexample/symfony-design-system/js/Helper/ImageHelper';
+
+// What a canvas cuts and writes back as it was.
+const CROPPABLE_TYPES = ['image/jpeg', 'image/png', 'image/webp'];
 
 const T = 'WexampleSymfonyMediaDsBundle.components.media-library.media-library::';
 // What a level of the library is asked for at a time.
@@ -18,7 +22,8 @@ export default {
   template: '#vue-template-wexample-symfony-media-ds-bundle-components-media-library-media-library',
 
   components: {
-    FileExplorer
+    FileExplorer,
+    ImageCrop
   },
 
   props: {
@@ -48,6 +53,8 @@ export default {
       selected: [],
       // A folder being named, or an item being renamed: { mode, item, name }.
       naming: null,
+      // One image picked, waiting to be cropped or sent whole: { file, url }.
+      cropping: null,
       uploading: 0
     };
   },
@@ -130,17 +137,41 @@ export default {
       this.$refs.files?.click();
     },
 
-    // Sent to the folder shown, in pieces, by the loader's upload queue; the
-    // listing comes back once the queue is empty. An image too large for any
-    // page is made smaller first, in the browser.
-    async onFilesPicked(event) {
+    // One image alone is offered to be cropped first; several files go as
+    // they are — nobody crops twenty photos one by one.
+    onFilesPicked(event) {
       const picked = Array.from(event.target.files ?? []);
       event.target.value = '';
 
-      if (!picked.length) {
-        return;
+      if (picked.length === 1 && CROPPABLE_TYPES.includes(picked[0].type)) {
+        this.cropping = { file: picked[0], url: URL.createObjectURL(picked[0]) };
+      } else if (picked.length) {
+        this.send(picked);
+      }
+    },
+
+    // `crop` true sends the area kept, false the whole image, null nothing.
+    async endCrop(crop) {
+      const { file, url } = this.cropping;
+      let sent = file;
+
+      if (crop) {
+        const blob = await this.$refs.cropper.crop({ type: file.type });
+        sent = blob ? new File([blob], file.name, { type: file.type, lastModified: file.lastModified }) : file;
       }
 
+      URL.revokeObjectURL(url);
+      this.cropping = null;
+
+      if (crop !== null) {
+        this.send([sent]);
+      }
+    },
+
+    // Sent to the folder shown, in pieces, by the loader's upload queue; the
+    // listing comes back once the queue is empty. An image too large for any
+    // page is made smaller first, in the browser.
+    async send(picked) {
       const files = this.imageMaxSize
         ? await Promise.all(picked.map((file) => imageShrinkFile(file, this.imageMaxSize)))
         : picked;
