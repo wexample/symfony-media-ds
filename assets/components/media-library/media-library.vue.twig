@@ -18,9 +18,11 @@
                 :multiple="multiple"
                 default-view="grid"
                 :framed="false"
+                :movable="canManage"
                 @navigate="(path) => { folder = path ? { path } : null; onNavigate(); }"
                 @select="onSelect"
                 @open="onOpen"
+                @move="onMove"
         >
             <template v-if="canManage" #actions>
                 <input ref="files" type="file" multiple hidden :accept="accept || null" @change="onFilesPicked">

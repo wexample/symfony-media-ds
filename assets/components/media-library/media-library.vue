@@ -8,8 +8,8 @@ const PAGE_LENGTH = 60;
 
 // The media library: symfony-design-system's file explorer, fed by
 // symfony-media's API, with what arranging it takes — an upload into the
-// folder shown, a new folder, a rename, a deletion — for whoever may manage
-// it. As a picker (`picker`) — the page opened by a media field in a modal
+// folder shown, a new folder, a rename, a move by dragging onto a folder, a
+// deletion — for whoever may manage it. As a picker (`picker`) — the page opened by a media field in a modal
 // or a panel —, it adds the way to choose what is selected, tells the field
 // (`media-library:choose`, with its id and the media items), and closes the
 // page as a form does once sent.
@@ -188,6 +188,18 @@ export default {
 
       for (const item of this.selected) {
         if (!(await this.call('delete', { type: this.kind(item), id: item.id }))) {
+          break;
+        }
+      }
+
+      this.refresh();
+    },
+
+    // Dropped on a folder of the listing or of the path: each item moved in
+    // turn, the first refusal told and the rest left where they are.
+    async onMove({ items, target }) {
+      for (const item of items) {
+        if (!(await this.call('move', { type: this.kind(item), id: item.id, target: this.folderId(target) }))) {
           break;
         }
       }
