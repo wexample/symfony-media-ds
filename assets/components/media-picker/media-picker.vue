@@ -25,9 +25,7 @@ export default {
     // The library page (media_library_url()), opened as a picker.
     libraryUrl: { type: String, required: true },
     // Where it opens: `modal` or `panel`.
-    target: { type: String, default: TARGET_MODAL },
-    // The wording, resolved by the server (media_picker_labels()).
-    labels: { type: Object, default: () => ({}) }
+    target: { type: String, default: TARGET_MODAL }
   },
 
   data() {
@@ -54,7 +52,7 @@ export default {
 
   methods: {
     t(key, parameters = {}) {
-      return this.labels[key] ?? this.trans(`${T}${key}`, parameters);
+      return this.trans(`${T}${key}`, parameters);
     },
 
     renderIcon(name) {

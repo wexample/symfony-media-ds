@@ -31,9 +31,7 @@ export default {
     picker: { type: Boolean, default: false },
     // The id of the field a picker answers.
     field: { type: String, default: '' },
-    stateId: { type: String, default: 'media-library' },
-    // The wording, resolved by the server (media_library_options()).
-    labels: { type: Object, default: () => ({}) }
+    stateId: { type: String, default: 'media-library' }
   },
 
   emits: ['choose'],
@@ -64,13 +62,7 @@ export default {
 
   methods: {
     t(key, parameters = {}) {
-      const label = this.labels[key];
-
-      if (label === undefined) {
-        return this.trans(`${T}${key}`, parameters);
-      }
-
-      return Object.entries(parameters).reduce((text, [name, value]) => text.replaceAll(name, String(value)), label);
+      return this.trans(`${T}${key}`, parameters);
     },
 
     renderIcon(name) {
