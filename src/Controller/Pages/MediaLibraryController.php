@@ -16,8 +16,8 @@ use Wexample\SymfonyMediaDs\Traits\SymfonyMediaDsBundleClassTrait;
  * manage it.
  *
  * Opened by a media field in a modal or a panel, it is a picker
- * (`?picker=1&multiple=0|1&field=<id>`): what is chosen goes back to the
- * field named, and the page closes.
+ * (`?picker=1&multiple=0|1&field=<id>&accept=image/*`): what is chosen goes
+ * back to the field named, and the page closes.
  */
 #[Route(path: '/media/', name: 'media_library_')]
 final class MediaLibraryController extends AbstractPagesController
@@ -41,6 +41,7 @@ final class MediaLibraryController extends AbstractPagesController
             'picker' => $request->query->getBoolean('picker'),
             'multiple' => $request->query->getBoolean('multiple', true),
             'field' => $request->query->getString('field'),
+            'accept' => $request->query->getString('accept'),
         ]);
     }
 }

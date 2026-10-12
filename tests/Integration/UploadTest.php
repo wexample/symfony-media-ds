@@ -9,6 +9,7 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Security\Core\Authentication\Token\UsernamePasswordToken;
 use Symfony\Component\Security\Core\User\InMemoryUser;
 use Wexample\SymfonyDesignSystem\Event\UploadCompletedEvent;
+use Wexample\SymfonyDesignSystem\Service\UploadTokenService;
 use Wexample\SymfonyMedia\Repository\MediaRepository;
 use Wexample\SymfonyMedia\Service\MediaLibraryService;
 use Wexample\SymfonyMediaDs\EventSubscriber\MediaUploadSubscriber;
@@ -52,6 +53,19 @@ class UploadTest extends KernelTestCase
         self::getContainer()->get(MediaUploadSubscriber::class)->onUploadCompleted($event);
 
         return $event;
+    }
+
+    public function testALibraryAcceptingImagesTakesNothingElse(): void
+    {
+        $this->signIn('ROLE_ADMIN');
+        $extension = self::getContainer()->get(MediaLibraryExtension::class);
+        $tokens = self::getContainer()->get(UploadTokenService::class);
+        $token = fn (array $options) => parse_url($extension->options($options)['uploadUrl'], PHP_URL_PATH);
+        $rules = fn (array $options) => $tokens->rules(basename($token($options)));
+
+        $this->assertTrue($rules(['accept' => 'image/*'])->allowsMimeType('image/png'));
+        $this->assertFalse($rules(['accept' => 'image/*'])->allowsMimeType('text/plain'));
+        $this->assertTrue($rules([])->allowsName('report.txt'));
     }
 
     public function testAnUploadBecomesAMediaOfTheFolderNamed(): void

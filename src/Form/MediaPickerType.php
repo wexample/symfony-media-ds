@@ -18,7 +18,7 @@ use Wexample\SymfonyMediaDs\Form\DataTransformer\MediaPickerTransformer;
  * several (`multiple: true`, a ManyToMany), picked in the media library,
  * which opens in a modal or, `target: panel`, a panel:
  *
- *     $builder->add('cover', MediaPickerType::class);
+ *     $builder->add('cover', MediaPickerType::class, ['accept' => 'image/*']);
  *     $builder->add('attachments', MediaPickerType::class, ['multiple' => true, 'target' => 'panel']);
  */
 class MediaPickerType extends AbstractType
@@ -46,6 +46,7 @@ class MediaPickerType extends AbstractType
 
         $view->vars['multiple'] = $options['multiple'];
         $view->vars['target'] = $options['target'];
+        $view->vars['accept'] = $options['accept'];
         // What the field shows before anything is picked: the ids it posts
         // say nothing to the person reading it.
         $view->vars['selected'] = array_map(fn (Media $item) => $this->library->describe($item), $media);
@@ -56,10 +57,15 @@ class MediaPickerType extends AbstractType
         $resolver->setDefaults([
             'multiple' => false,
             'target' => 'modal',
+            // What may be picked, as an `accept` attribute says it —
+            // `image/*`, `application/pdf,.svg` —: the library lists only
+            // that, and takes only that in an upload. Null, anything.
+            'accept' => null,
             'compound' => false,
             'invalid_message' => 'This media cannot be found.',
         ]);
         $resolver->setAllowedTypes('multiple', 'bool');
+        $resolver->setAllowedTypes('accept', ['null', 'string']);
         $resolver->setAllowedValues('target', ['modal', 'panel']);
     }
 

@@ -23,7 +23,7 @@
                 @open="onOpen"
         >
             <template v-if="canManage" #actions>
-                <input ref="files" type="file" multiple hidden @change="onFilesPicked">
+                <input ref="files" type="file" multiple hidden :accept="accept || null" @change="onFilesPicked">
                 <button type="button" class="toolbar--action" :aria-label="t('upload')" :data-tooltip="t('upload')" @click="pickFiles" v-html="renderIcon('ph:bold/upload-simple')"></button>
                 <button type="button" class="toolbar--action" :aria-label="t('new_folder')" :data-tooltip="t('new_folder')" @click="startNaming('folder')" v-html="renderIcon('ph:bold/folder-plus')"></button>
                 <button type="button" class="toolbar--action" :disabled="selected.length !== 1" :aria-label="t('rename')" :data-tooltip="t('rename')" @click="startNaming('rename')" v-html="renderIcon('ph:bold/pencil-simple')"></button>

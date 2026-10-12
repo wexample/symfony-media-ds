@@ -31,7 +31,9 @@ export default {
     picker: { type: Boolean, default: false },
     // The id of the field a picker answers.
     field: { type: String, default: '' },
-    stateId: { type: String, default: 'media-library' }
+    stateId: { type: String, default: 'media-library' },
+    // The media listed, and the only files an upload takes: `image/*`.
+    accept: { type: String, default: '' }
   },
 
   emits: ['choose'],
@@ -75,7 +77,7 @@ export default {
     },
 
     async loadChildren(folder, page) {
-      const query = new URLSearchParams({ folder: this.folderId(folder), page: String(page), length: String(PAGE_LENGTH) });
+      const query = new URLSearchParams({ folder: this.folderId(folder), page: String(page), length: String(PAGE_LENGTH), accept: this.accept });
       const response = await fetch(`${this.listUrl}?${query}`, { headers: { Accept: 'application/json' } });
       const data = unwrapApiEnvelope(await response.json());
 

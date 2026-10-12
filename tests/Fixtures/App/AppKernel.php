@@ -36,6 +36,8 @@ class AppKernel extends AbstractFixtureKernel
     {
         $routes->import(__DIR__.'/../../../vendor/wexample/symfony-media/src/Controller', 'attribute');
         $routes->import(__DIR__.'/../../../vendor/wexample/symfony-media/src/Api/Controller', 'attribute');
+        // The address an upload into the library is sent to.
+        $routes->import(__DIR__.'/../../../vendor/wexample/symfony-design-system/src/Controller/UploadController.php', 'attribute');
     }
 
     protected function build(ContainerBuilder $container): void

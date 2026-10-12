@@ -7,6 +7,7 @@ use Symfony\Component\Routing\Generator\UrlGeneratorInterface;
 use Symfony\Component\Security\Core\Authorization\AuthorizationCheckerInterface;
 use Twig\Extension\AbstractExtension;
 use Twig\TwigFunction;
+use Wexample\SymfonyDesignSystem\Class\UploadRules;
 use Wexample\SymfonyDesignSystem\Service\ChunkedUploadReceiver;
 use Wexample\SymfonyDesignSystem\Service\UploadTokenService;
 use Wexample\SymfonyMedia\Api\Controller\MediaController;
@@ -49,13 +50,15 @@ class MediaLibraryExtension extends AbstractExtension
     }
 
     /**
-     * @param array{multiple?: bool, state_id?: string|null, picker?: bool, field?: string} $options
+     * @param array{multiple?: bool, state_id?: string|null, picker?: bool, field?: string, accept?: string} $options
+     *   `accept`, as the attribute: the media listed, and the only files an upload takes
      *
      * @return array<string, mixed>
      */
     public function options(array $options = []): array
     {
         $canManage = $this->authorizationChecker->isGranted(MediaVoter::MANAGE);
+        $accept = (string) ($options['accept'] ?? '');
         $route = static fn (string $name) => 'api_media_'.$name;
 
         return [
@@ -68,13 +71,17 @@ class MediaLibraryExtension extends AbstractExtension
                 'delete' => $this->urlGenerator->generate($route(MediaController::ROUTE_DELETE)),
             ] : null,
             'uploadUrl' => $canManage ? $this->urlGenerator->generate('wexample_design_system_upload_chunk', [
-                'token' => $this->uploadTokens->issue($this->getIntakeDirectory()),
+                'token' => $this->uploadTokens->issue(
+                    $this->getIntakeDirectory(),
+                    rules: '' === $accept ? null : new UploadRules(array_map('trim', explode(',', $accept)))
+                ),
             ]) : null,
             'chunkSize' => $this->uploadReceiver->chunkSize(),
             'multiple' => $options['multiple'] ?? true,
             'picker' => $options['picker'] ?? false,
             // The id of the field a picker answers.
             'field' => $options['field'] ?? '',
+            'accept' => $accept,
             'stateId' => $options['state_id'] ?? 'media-library',
         ];
     }

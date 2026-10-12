@@ -25,7 +25,9 @@ export default {
     // The library page (media_library_url()), opened as a picker.
     libraryUrl: { type: String, required: true },
     // Where it opens: `modal` or `panel`.
-    target: { type: String, default: TARGET_MODAL }
+    target: { type: String, default: TARGET_MODAL },
+    // What may be picked, as an `accept` attribute says it: `image/*`.
+    accept: { type: String, default: null }
   },
 
   data() {
@@ -64,6 +66,9 @@ export default {
     // field, added to what it holds, or in its place for a single one.
     openLibrary() {
       const query = new URLSearchParams({ picker: '1', multiple: this.multiple ? '1' : '0', field: this.resolvedId });
+      if (this.accept) {
+        query.set('accept', this.accept);
+      }
       const separator = this.libraryUrl.includes('?') ? '&' : '?';
 
       loadIntoTarget(this.app, this.target, `${this.libraryUrl}${separator}${query}`, {
