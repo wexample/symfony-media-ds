@@ -10,13 +10,13 @@
         {#- The ids the form submits. -#}
         <input type="hidden" :name="name || null" :id="resolvedId" :value="value">
 
-        <ul v-if="items.length" class="media-picker--items">
-            <li v-for="item in items" :key="item.id" class="media-picker--item">
-                <img v-if="item.thumbnailUrl" class="media-picker--thumbnail" :src="item.thumbnailUrl" alt="">
-                <span v-else class="media-picker--icon" v-html="renderIcon('ph:bold/file')"></span>
-                <a class="media-picker--name" :href="item.url" target="_blank" rel="noopener" :title="item.name">[[ item.name ]]</a>
+        <ul v-if="items.length" class="file-chips media-picker--items">
+            <li v-for="item in items" :key="item.id" class="file-chip">
+                <img v-if="item.thumbnailUrl" class="file-chip--media" :src="item.thumbnailUrl" alt="">
+                <span v-else class="file-chip--icon" v-html="renderIcon('ph:bold/file')"></span>
+                <a class="file-chip--name" :href="item.url" target="_blank" rel="noopener" :title="item.name">[[ item.name ]]</a>
                 <button type="button"
-                        class="button button--flat button--compact media-picker--remove"
+                        class="button button--flat button--compact file-chip--remove"
                         :disabled="isDisabled ? true : null"
                         :aria-label="t('remove')"
                         @click="remove(item)">&times;</button>
