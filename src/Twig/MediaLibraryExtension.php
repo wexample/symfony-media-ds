@@ -22,6 +22,11 @@ use Wexample\SymfonyMedia\Security\MediaVoter;
  */
 class MediaLibraryExtension extends AbstractExtension
 {
+    /**
+     * Wide enough for a full screen, a fraction of what a camera takes.
+     */
+    public const int IMAGE_MAX_SIZE = 2560;
+
     public function __construct(
         private readonly UrlGeneratorInterface $urlGenerator,
         private readonly AuthorizationCheckerInterface $authorizationChecker,
@@ -50,8 +55,9 @@ class MediaLibraryExtension extends AbstractExtension
     }
 
     /**
-     * @param array{multiple?: bool, state_id?: string|null, picker?: bool, field?: string, accept?: string} $options
-     *   `accept`, as the attribute: the media listed, and the only files an upload takes
+     * @param array{multiple?: bool, state_id?: string|null, picker?: bool, field?: string, accept?: string, image_max_size?: int} $options
+     *   `accept`, as the attribute: the media listed, and the only files an upload takes;
+     *   `image_max_size`, the longest side an image is brought down to in the browser before it is sent, 0 for none
      *
      * @return array<string, mixed>
      */
@@ -82,6 +88,7 @@ class MediaLibraryExtension extends AbstractExtension
             // The id of the field a picker answers.
             'field' => $options['field'] ?? '',
             'accept' => $accept,
+            'imageMaxSize' => $options['image_max_size'] ?? self::IMAGE_MAX_SIZE,
             'stateId' => $options['state_id'] ?? 'media-library',
         ];
     }

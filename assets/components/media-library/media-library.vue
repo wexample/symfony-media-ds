@@ -1,6 +1,7 @@
 <script>
 import FileExplorer from '@wexample/symfony-design-system/components/file-explorer/file-explorer.vue';
 import { unwrapApiEnvelope } from '@wexample/js-api-entity/Common/ApiEnvelope';
+import { imageShrinkFile } from '@wexample/symfony-design-system/js/Helper/ImageHelper';
 
 const T = 'WexampleSymfonyMediaDsBundle.components.media-library.media-library::';
 // What a level of the library is asked for at a time.
@@ -33,7 +34,10 @@ export default {
     field: { type: String, default: '' },
     stateId: { type: String, default: 'media-library' },
     // The media listed, and the only files an upload takes: `image/*`.
-    accept: { type: String, default: '' }
+    accept: { type: String, default: '' },
+    // The longest side, in pixels, an image is brought down to before it is
+    // sent; 0 sends it as it is.
+    imageMaxSize: { type: Number, default: 0 }
   },
 
   emits: ['choose'],
@@ -127,14 +131,19 @@ export default {
     },
 
     // Sent to the folder shown, in pieces, by the loader's upload queue; the
-    // listing comes back once the queue is empty.
-    onFilesPicked(event) {
-      const files = Array.from(event.target.files ?? []);
+    // listing comes back once the queue is empty. An image too large for any
+    // page is made smaller first, in the browser.
+    async onFilesPicked(event) {
+      const picked = Array.from(event.target.files ?? []);
       event.target.value = '';
 
-      if (!files.length) {
+      if (!picked.length) {
         return;
       }
+
+      const files = this.imageMaxSize
+        ? await Promise.all(picked.map((file) => imageShrinkFile(file, this.imageMaxSize)))
+        : picked;
 
       const separator = this.uploadUrl.includes('?') ? '&' : '?';
       this.uploading += files.length;
