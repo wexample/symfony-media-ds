@@ -68,7 +68,7 @@ class MediaLibraryExtension extends AbstractExtension
         $route = static fn (string $name) => 'api_media_'.$name;
 
         return [
-            'listUrl' => $this->urlGenerator->generate($route(MediaController::ROUTE_LIST)),
+            'listUrl' => $this->urlGenerator->generate($route(MediaController::ROUTE_LEVEL)),
             'canManage' => $canManage,
             'manageUrls' => $canManage ? [
                 'folder' => $this->urlGenerator->generate($route(MediaController::ROUTE_FOLDER)),

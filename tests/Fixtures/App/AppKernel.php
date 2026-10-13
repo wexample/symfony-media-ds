@@ -9,6 +9,7 @@ use Symfony\Component\Routing\Loader\Configurator\RoutingConfigurator;
 use Wexample\SymfonyMedia\WexampleSymfonyMediaBundle;
 use Wexample\SymfonyMediaDs\Controller\Pages\MediaLibraryController;
 use Wexample\SymfonyMediaDs\Tests\Fixtures\App\DependencyInjection\PublicServicesPass;
+use Wexample\SymfonyMediaDs\Twig\MediaWallExtension;
 use Wexample\SymfonyMediaDs\WexampleSymfonyMediaDsBundle;
 use Wexample\SymfonyTesting\Tests\Fixtures\AbstractFixtureKernel;
 
@@ -44,13 +45,14 @@ class AppKernel extends AbstractFixtureKernel
     {
         parent::build($container);
         $container->addCompilerPass(new PublicServicesPass(), PassConfig::TYPE_BEFORE_REMOVING);
-        // The pages are drawn by symfony-loader, which this kernel leaves out:
-        // what is tested here is the library's machinery. Removed before the
-        // controllers' arguments are registered.
+        // The pages and the components are drawn by symfony-loader, which this
+        // kernel leaves out: what is tested here is the library's machinery.
+        // Removed before the controllers' arguments are registered.
         $container->addCompilerPass(new class implements CompilerPassInterface {
             public function process(ContainerBuilder $container): void
             {
                 $container->removeDefinition(MediaLibraryController::class);
+                $container->removeDefinition(MediaWallExtension::class);
             }
         }, PassConfig::TYPE_BEFORE_OPTIMIZATION, 100);
     }
