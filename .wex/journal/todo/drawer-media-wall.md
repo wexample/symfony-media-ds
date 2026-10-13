@@ -1,7 +1,7 @@
 # Media wall (masonry grid with lazy images) and optional carousel
 
 Opened: 2026-10-09
-Updated: 2026-10-09
+Updated: 2026-10-13
 Author: agent:archeology-drawers
 
 ## Read this first — status of this todo
@@ -13,6 +13,29 @@ Author: agent:archeology-drawers
 > - Safety: `NETWORK/local/network` runs on production data — read its code only, never run anything against it. Anonymize anything taken from it. Never copy secrets found in its history.
 
 Drawers page: `/home/weeger/Desktop/WIP/WEB/WEXAMPLE/NETWORK/local/network/.wex/knowledge/readme/archeology/drawers-bundles-components.md.j2`, sections "Masonry media wall (`MasonryBundle`)" and "Owl carousel (`CarouselBundle`)".
+
+## Outcome — 2026-10-13
+
+The wall is done, split as weeger decided: a generic shape and components in
+the design system, the entity version here.
+
+- `symfony-design-system`: the `.wall` shape (`css/shapes/_wall.scss`, rows a
+  twelfth of a column, `grid-row-end: span n` from the ratio — `WallHelper.wallSpan()`
+  and `WallExtension::span()`), the `media` frame (Twig `media()` and Vue, with
+  the `media--placeholder` glow and the `media--caption` band), Twig `wall(items)`,
+  and `collection/wall/abstract-entity-wall`, which reads the next page as it is
+  scrolled (`appendsPages()` / `loadNewerEntities()` added to the collection mixin).
+- `symfony-media`: `Media` exported to TypeScript, `api/media/list` listing the
+  media as entities (`apiResponseQueryPage`, `folder`, `accept`, `sort`), their
+  urls in each item's metadata. The library explorer's listing moved to `api/media/level`.
+- `symfony-media-ds`: the `media-wall` Vue component and Twig `media_wall(medias)`.
+- Demos: the Media page of the design system, the article page of `symfony-media-demo`.
+
+What changed from the proposal below: images are lazy through `loading="lazy"`
+(ComponentLazyLoaderService loads components, not images); the cover → screenshot
+→ gradient order is the application's to choose, the wall only has the placeholder.
+
+Left: **the carousel** (`media-strip`), to be discussed before anything is built.
 
 ## What it is
 
