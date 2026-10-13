@@ -35,7 +35,11 @@ What changed from the proposal below: images are lazy through `loading="lazy"`
 (ComponentLazyLoaderService loads components, not images); the cover → screenshot
 → gradient order is the application's to choose, the wall only has the placeholder.
 
-Left: **the carousel** (`media-strip`), to be discussed before anything is built.
+The demos draw their pictures with the design system's fixtures,
+`/_design-system/fixtures/picture/{width}x{height}.svg?hue=…`, a gradient at any size.
+
+Validated by weeger on 2026-10-13. The carousel (`media-strip`) was not built:
+reopen a todo if a screen ever needs one.
 
 ## What it is
 
