@@ -4,9 +4,9 @@
 
 The component is drawn anywhere with the options the server computes:
 
-```twig
+{% raw %}```twig
 {{ vue(render_pass, '@WexampleSymfonyMediaDsBundle/components/media-library', media_library_options()) }}
-```
+```{% endraw %}
 
 `media_library_options({ multiple, picker, field, state_id })` gives its addresses, the actions the current user may take, a signed upload address for the library's intake directory, and its wording, resolved on the server.
 
