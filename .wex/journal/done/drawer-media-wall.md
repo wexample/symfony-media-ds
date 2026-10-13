@@ -82,3 +82,7 @@ git show 1756b18e6:project/src/Wex/BaseBundle/Resources/templates/macros/compone
 1. Does a display gallery belong in `symfony-media-ds`, or in `symfony-design-system` (generic, URLs only)?
 2. Is the carousel wanted at all?
 3. Should true CSS masonry (`grid-template-rows: masonry`, still behind flags) be used as a progressive enhancement?
+
+## Decision (2026-10-13, owner)
+
+Already covered by symfony-media-ds: nothing left to build.
