@@ -1,0 +1,26 @@
+## The library page
+
+`/media/` (`media_library_index`) is symfony-media's library, browsed by whoever holds `MEDIA_VIEW`: symfony-design-system's file explorer, its folders on the side, its media in a grid of thumbnails or a list. Whoever holds `MEDIA_MANAGE` also adds files to the folder shown — sent in pieces by the loader's upload queue —, makes folders, renames and deletes.
+
+The component is drawn anywhere with the options the server computes:
+
+```twig
+{{ vue(render_pass, '@WexampleSymfonyMediaDsBundle/components/media-library', media_library_options()) }}
+```
+
+`media_library_options({ multiple, picker, field, state_id })` gives its addresses, the actions the current user may take, a signed upload address for the library's intake directory, and its wording, resolved on the server.
+
+Like any page, the library opens in a modal or a panel — `button_target(icon, label, path('media_library_index'), 'modal')` —, the way the tunnels of symfony-tunnels-demo do.
+
+An upload lands in `<storage_dir>/intake`; `EventSubscriber\MediaUploadSubscriber` takes it from there (symfony-design-system's `UploadCompletedEvent`) into the folder its address names, and answers with the media it became.
+
+## Picking media in a form
+
+```php
+$builder->add('cover', MediaPickerType::class);                                                  // one media: a ManyToOne
+$builder->add('attachments', MediaPickerType::class, ['multiple' => true, 'target' => 'panel']); // several: a ManyToMany
+```
+
+The field shows what it holds — a thumbnail and a name each — and opens the library page as a picker (`?picker=1&multiple=&field=<id>`), loaded by the loader in a modal or, `target: panel`, a panel. A media opened, or the selection chosen, goes back to the field (`media-library:choose`, on the document, naming the field), and the page closes the way a form closes once sent (`embed:close`). What it posts is the ids, comma separated; `Form\DataTransformer\MediaPickerTransformer` turns them back into the media, a collection for several. The field joins the application's form theme by itself.
+
+symfony-media-demo shows both: the library, and an article picking its cover and its attachments.

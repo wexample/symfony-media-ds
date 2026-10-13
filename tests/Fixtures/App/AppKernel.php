@@ -48,7 +48,7 @@ class AppKernel extends AbstractFixtureKernel
         // The pages and the components are drawn by symfony-loader, which this
         // kernel leaves out: what is tested here is the library's machinery.
         // Removed before the controllers' arguments are registered.
-        $container->addCompilerPass(new class implements CompilerPassInterface {
+        $container->addCompilerPass(new class () implements CompilerPassInterface {
             public function process(ContainerBuilder $container): void
             {
                 $container->removeDefinition(MediaLibraryController::class);
