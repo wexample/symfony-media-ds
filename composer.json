@@ -1,7 +1,7 @@
 {
   "name": "wexample/symfony-media-ds",
   "description": "Design-system side of symfony-media: the library page, browsed, uploaded into and arranged, and a form field picking media from it",
-  "version": "2.0.2",
+  "version": "2.0.3",
   "type": "library",
   "license": "MIT",
   "autoload": {
