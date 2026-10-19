@@ -34,6 +34,8 @@ class MediaLibraryExtension extends AbstractExtension
         private readonly ChunkedUploadReceiver $uploadReceiver,
         #[Autowire(param: 'wexample_symfony_media.storage_dir')]
         private readonly string $storageDir,
+        #[Autowire(param: 'wexample_symfony_media.upload_max_size')]
+        private readonly ?int $uploadMaxSize = null,
     ) {
     }
 
@@ -79,7 +81,9 @@ class MediaLibraryExtension extends AbstractExtension
             'uploadUrl' => $canManage ? $this->urlGenerator->generate('wexample_design_system_upload_chunk', [
                 'token' => $this->uploadTokens->issue(
                     $this->getIntakeDirectory(),
-                    rules: '' === $accept ? null : new UploadRules(array_map('trim', explode(',', $accept)))
+                    rules: '' === $accept && null === $this->uploadMaxSize
+                        ? null
+                        : new UploadRules('' === $accept ? [] : array_map('trim', explode(',', $accept)), $this->uploadMaxSize)
                 ),
             ]) : null,
             'chunkSize' => $this->uploadReceiver->chunkSize(),
