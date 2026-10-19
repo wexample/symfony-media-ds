@@ -1,0 +1,84 @@
+{
+    "components/media-library/media-library.zh.yml": {
+        "cancel": {
+            "hash": "121cad078beccff8a1ea9128c3906546",
+            "engine": "syrtis"
+        },
+        "choose": {
+            "hash": "b87051c97ade1ca3b698c322f677b523",
+            "engine": "syrtis"
+        },
+        "crop.as_is": {
+            "hash": "5d49bbefe46912667a7bd7fe863ab1ba",
+            "engine": "syrtis"
+        },
+        "crop.cropped": {
+            "hash": "db1c416a87a34ba353af3c9b80743697",
+            "engine": "syrtis"
+        },
+        "delete.action": {
+            "hash": "67e72b5feb815b9a06d6161aa8641198",
+            "engine": "syrtis"
+        },
+        "delete.message": {
+            "hash": "5c36177a0344f6c628c7a61fcaef990c",
+            "engine": "syrtis"
+        },
+        "delete.title": {
+            "hash": "67e72b5feb815b9a06d6161aa8641198",
+            "engine": "syrtis"
+        },
+        "new_folder": {
+            "hash": "f48ce63bcf566877aad8e730ba332727",
+            "engine": "syrtis"
+        },
+        "rename": {
+            "hash": "587cb0834cf5093c4d79cf4afc2d528c",
+            "engine": "syrtis"
+        },
+        "save": {
+            "hash": "cfd38aa1d471aa99c901bc5d0c40d4fe",
+            "engine": "syrtis"
+        },
+        "upload": {
+            "hash": "bd6e0fac4975870573d9fb54ed519329",
+            "engine": "syrtis"
+        }
+    },
+    "components/media-picker/media-picker.zh.yml": {
+        "library": {
+            "hash": "0493482abfc0021d17c8b011351a247b",
+            "engine": "syrtis"
+        },
+        "pick": {
+            "hash": "cc75b9aed236a421a62f80c233acfad6",
+            "engine": "syrtis"
+        },
+        "remove": {
+            "hash": "7c478496f264e7b1ac57a224ea4feb23",
+            "engine": "syrtis"
+        },
+        "replace": {
+            "hash": "83cc0351a9ee3d3a8cf60040e523a292",
+            "engine": "syrtis"
+        }
+    },
+    "pages/media_library/index.zh.yml": {
+        "open.modal": {
+            "hash": "a212bfbfcfb158690cf13e653f057498",
+            "engine": "syrtis"
+        },
+        "open.panel": {
+            "hash": "3c039ad089713ff31afd9014a878b513",
+            "engine": "syrtis"
+        },
+        "page_icon": {
+            "hash": "bf56057df55094fde26d8309b92034f2",
+            "engine": "syrtis"
+        },
+        "page_title": {
+            "hash": "0493482abfc0021d17c8b011351a247b",
+            "engine": "syrtis"
+        }
+    }
+}

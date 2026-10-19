@@ -27,3 +27,18 @@ fr:
     action: Supprimer
     title: Supprimer
     message: 'Supprimer %count% élément(s) ? Un dossier doit d''abord être vide.'
+
+zh:
+  upload: 添加文件
+  new_folder: 新文件夹
+  rename: 重命名
+  save: 保存
+  cancel: 取消
+  choose: '选择 (%count%)'
+  crop:
+    as_is: 完整发送
+    cropped: 裁剪并发送
+  delete:
+    action: 删除
+    title: 删除
+    message: '删除 %count% 项？文件夹必须先为空。'

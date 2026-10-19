@@ -11,3 +11,10 @@ fr:
   open:
     modal: Ouvrir dans une modale
     panel: Ouvrir dans un panneau
+
+zh:
+  page_title: 媒体库
+  page_icon: 'ph:bold/images'
+  open:
+    modal: 在弹窗中打开
+    panel: 在面板中打开

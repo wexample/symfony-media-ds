@@ -9,3 +9,9 @@ fr:
   replace: Remplacer
   remove: Retirer
   library: Médiathèque
+
+zh:
+  pick: 从媒体库中选择
+  replace: 替换
+  remove: 移除
+  library: 媒体库
