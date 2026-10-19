@@ -42,3 +42,303 @@ zh:
     action: 删除
     title: 删除
     message: '删除 %count% 项？文件夹必须先为空。'
+
+ar:
+  upload: 'إضافة ملفات'
+  new_folder: 'مجلد جديد'
+  rename: 'إعادة تسمية'
+  save: حفظ
+  cancel: إلغاء
+  choose: 'اختر (%count%)'
+  crop:
+    as_is: 'أرسلها كاملة'
+    cropped: 'قص وأرسل'
+  delete:
+    action: حذف
+    title: حذف
+    message: 'هل تريد حذف %count% عنصر(عناصر)؟ يجب أن يكون المجلد فارغًا أولاً.'
+
+hi:
+  upload: 'फाइलें जोड़ें'
+  new_folder: 'नई फ़ोल्डर'
+  rename: 'नाम बदलें'
+  save: सहेजें
+  cancel: 'रद्द करें'
+  choose: 'चुनें (%count%)'
+  crop:
+    as_is: 'इसे पूरा भेजें'
+    cropped: 'काटें और भेजें'
+  delete:
+    action: हटाएँ
+    title: हटाएँ
+    message: '%count% आइटम(s) हटाएँ? पहले फ़ोल्डर खाली होना चाहिए।'
+
+he:
+  upload: 'הוסף קבצים'
+  new_folder: 'תיקייה חדשה'
+  rename: 'שנה שם'
+  save: שמור
+  cancel: בטל
+  choose: 'בחר (%count%)'
+  crop:
+    as_is: 'שלח את זה כמו שזה'
+    cropped: 'גזר ושלח'
+  delete:
+    action: מחק
+    title: מחק
+    message: 'למחוק %count% פריט(ים)? התיקייה חייבת להיות ריקה קודם.'
+
+fa:
+  upload: 'اضافه کردن فایل ها'
+  new_folder: 'پوشه جدید'
+  rename: 'تغییر نام'
+  save: ذخیره
+  cancel: لغو
+  choose: 'انتخاب (%count%)'
+  crop:
+    as_is: 'ارسال به صورت کامل'
+    cropped: 'برش و ارسال'
+  delete:
+    action: حذف
+    title: حذف
+    message: 'آیا %count% مورد را حذف می کنید؟ ابتدا باید پوشه خالی باشد.'
+
+ur:
+  upload: 'فائلیں شامل کریں'
+  new_folder: 'نیا فولڈر'
+  rename: 'نیا نام دیں'
+  save: 'محفوظ کریں'
+  cancel: 'منسوخ کریں'
+  choose: 'چنیں (%count%)'
+  crop:
+    as_is: 'پوری بھیجیں'
+    cropped: 'کٹ کر بھیجیں'
+  delete:
+    action: 'حذف کریں'
+    title: 'حذف کریں'
+    message: '%count% آئٹم(s) حذف کریں؟ پہلے فولڈر خالی ہونا چاہیے۔'
+
+ja:
+  upload: ファイルを追加
+  new_folder: 新しいフォルダー
+  rename: 名前を変更
+  save: 保存
+  cancel: キャンセル
+  choose: '選択する (%count%)'
+  crop:
+    as_is: そのまま送信
+    cropped: トリミングして送信
+  delete:
+    action: 削除
+    title: 削除
+    message: '%count%項目を削除しますか？ フォルダーは最初に空でなければなりません。'
+
+ko:
+  upload: '파일 추가'
+  new_folder: '새 폴더'
+  rename: '이름 바꾸기'
+  save: 저장
+  cancel: 취소
+  choose: '선택하기 (%count%)'
+  crop:
+    as_is: '전체 전송'
+    cropped: '자르고 전송'
+  delete:
+    action: 삭제
+    title: 삭제
+    message: '%count% 항목을 삭제하시겠습니까? 폴더가 먼저 비어 있어야 합니다.'
+
+bn:
+  upload: 'ফাইল যুক্ত করুন'
+  new_folder: 'নতুন ফোল্ডার'
+  rename: 'নাম পরিবর্তন করুন'
+  save: 'সংরক্ষণ করুন'
+  cancel: 'বাতিল করুন'
+  choose: 'নির্বাচন করুন (%count%)'
+  crop:
+    as_is: 'সম্পূর্ণ পাঠান'
+    cropped: 'কাটুন এবং পাঠান'
+  delete:
+    action: মুছুন
+    title: মুছুন
+    message: '%count% আইটেম(গুলি) মুছবেন? একটি ফোল্ডার প্রথমে খালি হতে হবে।'
+
+th:
+  upload: เพิ่มไฟล์
+  new_folder: โฟลเดอร์ใหม่
+  rename: เปลี่ยนชื่อ
+  save: บันทึก
+  cancel: ยกเลิก
+  choose: 'เลือก (%count%)'
+  crop:
+    as_is: ส่งทั้งหมด
+    cropped: ตัดและส่ง
+  delete:
+    action: ลบ
+    title: ลบ
+    message: 'ลบ %count% รายการ? โฟลเดอร์ต้องว่างเปล่าก่อน.'
+
+de:
+  upload: 'Dateien hinzufügen'
+  new_folder: 'Neuer Ordner'
+  rename: Umbenennen
+  save: Speichern
+  cancel: Abbrechen
+  choose: 'Wählen (%count%)'
+  crop:
+    as_is: 'Ganz senden'
+    cropped: 'Zuschneiden und senden'
+  delete:
+    action: Löschen
+    title: Löschen
+    message: '%count% Element(e) löschen? Ein Ordner muss zuerst leer sein.'
+
+fi:
+  upload: 'Lisää tiedostoja'
+  new_folder: 'Uusi kansio'
+  rename: 'Nimeä uudelleen'
+  save: Tallenna
+  cancel: Peruuta
+  choose: 'Valitse (%count%)'
+  crop:
+    as_is: 'Lähetä kokonaisena'
+    cropped: 'Rajaa ja lähetä'
+  delete:
+    action: Poista
+    title: Poista
+    message: 'Poista %count% kohdetta? Kansion on oltava tyhjänä ensin.'
+
+ru:
+  upload: 'Добавить файлы'
+  new_folder: 'Новая папка'
+  rename: Переименовать
+  save: Сохранить
+  cancel: Отмена
+  choose: 'Выбрать (%count%)'
+  crop:
+    as_is: 'Отправить целиком'
+    cropped: 'Обрезать и отправить'
+  delete:
+    action: Удалить
+    title: Удалить
+    message: 'Удалить %count% элемент(ов)? Сначала папка должна быть пустой.'
+
+pl:
+  upload: 'Dodaj pliki'
+  new_folder: 'Nowy folder'
+  rename: 'Zmień nazwę'
+  save: Zapisz
+  cancel: Anuluj
+  choose: 'Wybierz (%count%)'
+  crop:
+    as_is: 'Wyślij w całości'
+    cropped: 'Przytnij i wyślij'
+  delete:
+    action: Usuń
+    title: Usuń
+    message: 'Usunąć %count% przedmiot(y)? Folder musi być najpierw pusty.'
+
+es:
+  upload: 'Añadir archivos'
+  new_folder: 'Nueva carpeta'
+  rename: Renombrar
+  save: Guardar
+  cancel: Cancelar
+  choose: 'Elegir (%count%)'
+  crop:
+    as_is: 'Enviar completo'
+    cropped: 'Recortar y enviar'
+  delete:
+    action: Eliminar
+    title: Eliminar
+    message: '¿Eliminar %count% elemento(s)? Una carpeta debe estar vacía primero.'
+
+it:
+  upload: 'Aggiungi file'
+  new_folder: 'Nuova cartella'
+  rename: Rinomina
+  save: Salva
+  cancel: Annulla
+  choose: 'Scegli (%count%)'
+  crop:
+    as_is: 'Invia tutto'
+    cropped: 'Ritaglia e invia'
+  delete:
+    action: Elimina
+    title: Elimina
+    message: 'Eliminare %count% elemento(i)? Una cartella deve essere vuota prima.'
+
+pt_BR:
+  upload: 'Adicionar arquivos'
+  new_folder: 'Nova pasta'
+  rename: Renomear
+  save: Salvar
+  cancel: Cancelar
+  choose: 'Escolher (%count%)'
+  crop:
+    as_is: 'Enviar inteiro'
+    cropped: 'Recortar e enviar'
+  delete:
+    action: Excluir
+    title: Excluir
+    message: 'Excluir %count% item(s)? Uma pasta deve estar vazia primeiro.'
+
+tr:
+  upload: 'Dosya ekle'
+  new_folder: 'Yeni klasör'
+  rename: 'Yeniden adlandır'
+  save: Kaydet
+  cancel: İptal
+  choose: 'Seç (%count%)'
+  crop:
+    as_is: 'Tamamını gönder'
+    cropped: 'Kırp ve gönder'
+  delete:
+    action: Sil
+    title: Sil
+    message: '%count% öğeyi silmek ister misiniz? Önce bir klasörün boş olması gerekir.'
+
+vi:
+  upload: 'Thêm tệp'
+  new_folder: 'Thư mục mới'
+  rename: 'Đổi tên'
+  save: Lưu
+  cancel: Hủy
+  choose: 'Chọn (%count%)'
+  crop:
+    as_is: 'Gửi nguyên vẹn'
+    cropped: 'Cắt và gửi'
+  delete:
+    action: Xóa
+    title: Xóa
+    message: 'Xóa %count% mục? Thư mục phải trống trước.'
+
+id:
+  upload: 'Tambah file'
+  new_folder: 'Folder baru'
+  rename: 'Ubah nama'
+  save: Simpan
+  cancel: Batal
+  choose: 'Pilih (%count%)'
+  crop:
+    as_is: 'Kirim apa adanya'
+    cropped: 'Potong dan kirim'
+  delete:
+    action: Hapus
+    title: Hapus
+    message: 'Hapus %count% item? Sebuah folder harus kosong terlebih dahulu.'
+
+nl:
+  upload: 'Bestanden toevoegen'
+  new_folder: 'Nieuwe map'
+  rename: Hernoemen
+  save: Opslaan
+  cancel: Annuleren
+  choose: 'Kies (%count%)'
+  crop:
+    as_is: 'Stuur het geheel'
+    cropped: 'Bijsnijden en verzenden'
+  delete:
+    action: Verwijderen
+    title: Verwijderen
+    message: 'Verwijder %count% item(s)? Een map moet eerst leeg zijn.'

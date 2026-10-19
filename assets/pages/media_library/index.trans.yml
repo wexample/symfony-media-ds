@@ -18,3 +18,143 @@ zh:
   open:
     modal: 在弹窗中打开
     panel: 在面板中打开
+
+ar:
+  page_title: 'مكتبة الوسائط'
+  page_icon: 'ph:bold/images'
+  open:
+    modal: 'افتح في نافذة منبثقة'
+    panel: 'افتح في لوحة'
+
+hi:
+  page_title: 'मीडिया पुस्तकालय'
+  page_icon: 'ph:bold/images'
+  open:
+    modal: 'मोडल में खोलें'
+    panel: 'पैनल में खोलें'
+
+he:
+  page_title: 'ספריית מדיה'
+  page_icon: 'ph:bold/images'
+  open:
+    modal: 'פתח במודל'
+    panel: 'פתח בלוח'
+
+fa:
+  page_title: 'کتابخانه رسانه'
+  page_icon: 'ph:bold/images'
+  open:
+    modal: 'باز کردن در یک پنجره مدال'
+    panel: 'باز کردن در یک پنل'
+
+ur:
+  page_title: 'میڈیا لائبریری'
+  page_icon: 'ph:bold/images'
+  open:
+    modal: 'ماڈل میں کھولیں'
+    panel: 'پینل میں کھولیں'
+
+ja:
+  page_title: メディアライブラリ
+  page_icon: 'ph:bold/images'
+  open:
+    modal: モーダルで開く
+    panel: パネルで開く
+
+ko:
+  page_title: '미디어 라이브러리'
+  page_icon: 'ph:bold/images'
+  open:
+    modal: '모달에서 열기'
+    panel: '패널에서 열기'
+
+bn:
+  page_title: 'মিডিয়া লাইব্রেরি'
+  page_icon: 'ph:bold/images'
+  open:
+    modal: 'মোডালে খুলুন'
+    panel: 'প্যানেলে খুলুন'
+
+th:
+  page_title: คลังสื่อ
+  page_icon: 'ph:bold/images'
+  open:
+    modal: เปิดในโมดัล
+    panel: เปิดในแผง
+
+de:
+  page_title: Medienbibliothek
+  page_icon: 'ph:bold/images'
+  open:
+    modal: 'In einem Modal öffnen'
+    panel: 'In einem Panel öffnen'
+
+fi:
+  page_title: Mediakirjasto
+  page_icon: 'ph:bold/images'
+  open:
+    modal: 'Avaa muokkausikkunassa'
+    panel: 'Avaa paneelissa'
+
+ru:
+  page_title: 'Медиа библиотека'
+  page_icon: 'ph:bold/images'
+  open:
+    modal: 'Открыть в модальном окне'
+    panel: 'Открыть в панели'
+
+pl:
+  page_title: 'Biblioteka multimediów'
+  page_icon: 'ph:bold/images'
+  open:
+    modal: 'Otwórz w oknie modalnym'
+    panel: 'Otwórz w panelu'
+
+es:
+  page_title: 'Biblioteca de medios'
+  page_icon: 'ph:bold/images'
+  open:
+    modal: 'Abrir en un modal'
+    panel: 'Abrir en un panel'
+
+it:
+  page_title: 'Libreria multimediale'
+  page_icon: 'ph:bold/images'
+  open:
+    modal: 'Apri in un modale'
+    panel: 'Apri in un pannello'
+
+pt_BR:
+  page_title: 'Biblioteca de mídia'
+  page_icon: 'ph:bold/images'
+  open:
+    modal: 'Abrir em um modal'
+    panel: 'Abrir em um painel'
+
+tr:
+  page_title: 'Medya kütüphanesi'
+  page_icon: 'ph:bold/images'
+  open:
+    modal: 'Modalde aç'
+    panel: 'Panelde aç'
+
+vi:
+  page_title: 'Thư viện phương tiện'
+  page_icon: 'ph:bold/images'
+  open:
+    modal: 'Mở trong một hộp thoại'
+    panel: 'Mở trong một bảng'
+
+id:
+  page_title: 'Perpustakaan media'
+  page_icon: 'ph:bold/images'
+  open:
+    modal: 'Buka dalam modal'
+    panel: 'Buka dalam panel'
+
+nl:
+  page_title: Mediabibliotheek
+  page_icon: 'ph:bold/images'
+  open:
+    modal: 'Open in een popup'
+    panel: 'Open in een paneel'

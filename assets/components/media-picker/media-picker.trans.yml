@@ -15,3 +15,123 @@ zh:
   replace: 替换
   remove: 移除
   library: 媒体库
+
+ar:
+  pick: 'اختيار من مكتبة الوسائط'
+  replace: استبدال
+  remove: إزالة
+  library: 'مكتبة الوسائط'
+
+hi:
+  pick: 'मीडिया लाइब्रेरी में चुनें'
+  replace: बदलें
+  remove: हटाएं
+  library: 'मीडिया लाइब्रेरी'
+
+he:
+  pick: 'בחר מספרייה המדיה'
+  replace: החלף
+  remove: הסר
+  library: 'ספריית מדיה'
+
+fa:
+  pick: 'انتخاب از کتابخانه رسانه'
+  replace: جایگزینی
+  remove: حذف
+  library: 'کتابخانه رسانه'
+
+ur:
+  pick: 'میڈیا لائبریری میں چنیں'
+  replace: بدلیں
+  remove: ہٹائیں
+  library: 'میڈیا لائبریری'
+
+ja:
+  pick: メディアライブラリから選択
+  replace: 置き換え
+  remove: 削除
+  library: メディアライブラリ
+
+ko:
+  pick: '미디어 라이브러리에서 선택'
+  replace: 교체
+  remove: 제거
+  library: '미디어 라이브러리'
+
+bn:
+  pick: 'মিডিয়া লাইব্রেরি থেকে নির্বাচন করুন'
+  replace: বদলান
+  remove: 'অপসারণ করুন'
+  library: 'মিডিয়া লাইব্রেরি'
+
+th:
+  pick: เลือกจากห้องสมุดสื่อ
+  replace: แทนที่
+  remove: ลบ
+  library: ห้องสมุดสื่อ
+
+de:
+  pick: 'Aus der Mediathek auswählen'
+  replace: Ersetzen
+  remove: Entfernen
+  library: Mediathek
+
+fi:
+  pick: 'Valitse mediakirjastosta'
+  replace: Korvata
+  remove: Poista
+  library: Mediakirjasto
+
+ru:
+  pick: 'Выбрать из медиа-библиотеки'
+  replace: Заменить
+  remove: Удалить
+  library: Медиа-библиотека
+
+pl:
+  pick: 'Wybierz w bibliotece multimedialnej'
+  replace: Zastąp
+  remove: Usuń
+  library: 'Biblioteka multimedialna'
+
+es:
+  pick: 'Seleccionar en la biblioteca de medios'
+  replace: Reemplazar
+  remove: Eliminar
+  library: 'Biblioteca de medios'
+
+it:
+  pick: 'Seleziona nella libreria multimediale'
+  replace: Sostituisci
+  remove: Rimuovi
+  library: 'Libreria multimediale'
+
+pt_BR:
+  pick: 'Selecionar na biblioteca de mídia'
+  replace: Substituir
+  remove: Remover
+  library: 'Biblioteca de mídia'
+
+tr:
+  pick: 'Medya kütüphanesinden seç'
+  replace: Değiştir
+  remove: Kaldır
+  library: 'Medya kütüphanesi'
+
+vi:
+  pick: 'Chọn trong thư viện phương tiện'
+  replace: 'Thay thế'
+  remove: Xóa
+  library: 'Thư viện phương tiện'
+
+id:
+  pick: 'Pilih di perpustakaan media'
+  replace: Ganti
+  remove: Hapus
+  library: 'Perpustakaan media'
+
+nl:
+  pick: 'Kies in de mediatheek'
+  replace: Vervangen
+  remove: Verwijderen
+  library: Mediatheek
