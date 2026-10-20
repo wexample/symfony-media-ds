@@ -1,7 +1,7 @@
 {
   "name": "wexample/symfony-media-ds",
   "description": "Design-system side of symfony-media: the library page, browsed, uploaded into and arranged, and a form field picking media from it",
-  "version": "3.0.0",
+  "version": "3.0.1",
   "type": "library",
   "license": "MIT",
   "autoload": {
@@ -25,7 +25,7 @@
     "symfony/form": "^7.4 || ^8.0",
     "wexample/symfony-design-system": ">=37.0.0",
     "wexample/symfony-helpers": ">=17.0.0",
-    "wexample/symfony-loader": ">=23.1.0",
+    "wexample/symfony-loader": ">=23.2.0",
     "wexample/symfony-media": ">=3.0.0"
   },
   "require-dev": {
