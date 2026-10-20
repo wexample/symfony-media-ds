@@ -1,5 +1,6 @@
 en:
   page_title: Media library
+  document_title: "Media library and file picker"
   page_description: "A media library to upload, browse and pick images and files, usable as a full page or opened as a picker in a modal or a side panel."
   page_icon: ph:bold/images
   open:
