@@ -1478,7 +1478,8 @@
     "pages/media_library/index.fr.yml": {
         "document_title": {
             "hash": "c70a7540753863ab57b54367e2513253",
-            "engine": "syrtis"
+            "engine": "syrtis",
+            "reviewed": "agent"
         }
     },
     "pages/media_library/index.he.yml": {
