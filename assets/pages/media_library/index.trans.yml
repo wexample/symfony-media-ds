@@ -9,15 +9,17 @@ en:
 
 fr:
   page_title: Médiathèque
-  page_description: "Une médiathèque pour téléverser, parcourir et choisir images et fichiers, utilisable en pleine page ou ouverte comme sélecteur dans une modale ou un panneau latéral."
-  page_icon: ph:bold/images
+  document_title: 'Bibliothèque multimédia et sélecteur de fichiers'
+  page_description: 'Une médiathèque pour téléverser, parcourir et choisir images et fichiers, utilisable en pleine page ou ouverte comme sélecteur dans une modale ou un panneau latéral.'
+  page_icon: 'ph:bold/images'
   open:
-    modal: Ouvrir dans une modale
-    panel: Ouvrir dans un panneau
+    modal: 'Ouvrir dans une modale'
+    panel: 'Ouvrir dans un panneau'
 
 zh:
   page_title: 媒体库
-  page_description: "用于上传、浏览和选择图片与文件的媒体库，可作为整页使用，也可在模态框或侧边面板中作为选择器打开。"
+  document_title: 媒体库和文件选择器
+  page_description: 用于上传、浏览和选择图片与文件的媒体库，可作为整页使用，也可在模态框或侧边面板中作为选择器打开。
   page_icon: 'ph:bold/images'
   open:
     modal: 在弹窗中打开
@@ -25,7 +27,8 @@ zh:
 
 ar:
   page_title: 'مكتبة الوسائط'
-  page_description: "مكتبة وسائط لرفع الصور والملفات وتصفحها واختيارها، تُستخدم كصفحة كاملة أو تُفتح كأداة اختيار في نافذة منبثقة أو لوحة جانبية."
+  document_title: 'مكتبة الوسائط ومحدد الملفات'
+  page_description: 'مكتبة وسائط لرفع الصور والملفات وتصفحها واختيارها، تُستخدم كصفحة كاملة أو تُفتح كأداة اختيار في نافذة منبثقة أو لوحة جانبية.'
   page_icon: 'ph:bold/images'
   open:
     modal: 'افتح في نافذة منبثقة'
@@ -33,7 +36,8 @@ ar:
 
 hi:
   page_title: 'मीडिया पुस्तकालय'
-  page_description: "चित्र और फ़ाइलें अपलोड करने, देखने और चुनने के लिए मीडिया लाइब्रेरी, पूरे पेज के रूप में या मोडल या साइड पैनल में पिकर के रूप में।"
+  document_title: 'मीडिया पुस्तकालय और फ़ाइल चयनकर्ता'
+  page_description: 'चित्र और फ़ाइलें अपलोड करने, देखने और चुनने के लिए मीडिया लाइब्रेरी, पूरे पेज के रूप में या मोडल या साइड पैनल में पिकर के रूप में।'
   page_icon: 'ph:bold/images'
   open:
     modal: 'मोडल में खोलें'
@@ -41,7 +45,8 @@ hi:
 
 he:
   page_title: 'ספריית מדיה'
-  page_description: "ספריית מדיה להעלאה, עיון ובחירה של תמונות וקבצים, כעמוד מלא או כבורר שנפתח בחלון מודאלי או בלוח צד."
+  document_title: 'ספריית מדיה ובחירת קבצים'
+  page_description: 'ספריית מדיה להעלאה, עיון ובחירה של תמונות וקבצים, כעמוד מלא או כבורר שנפתח בחלון מודאלי או בלוח צד.'
   page_icon: 'ph:bold/images'
   open:
     modal: 'פתח במודל'
@@ -49,7 +54,8 @@ he:
 
 fa:
   page_title: 'کتابخانه رسانه'
-  page_description: "کتابخانه رسانه برای بارگذاری، مرور و انتخاب تصویرها و فایل‌ها، به‌صورت صفحه کامل یا به شکل انتخابگر در مودال یا پنل کناری."
+  document_title: 'کتابخانه رسانه و انتخاب فایل'
+  page_description: 'کتابخانه رسانه برای بارگذاری، مرور و انتخاب تصویرها و فایل‌ها، به‌صورت صفحه کامل یا به شکل انتخابگر در مودال یا پنل کناری.'
   page_icon: 'ph:bold/images'
   open:
     modal: 'باز کردن در یک پنجره مدال'
@@ -57,7 +63,8 @@ fa:
 
 ur:
   page_title: 'میڈیا لائبریری'
-  page_description: "تصاویر اور فائلیں اپ لوڈ کرنے، دیکھنے اور چننے کے لیے میڈیا لائبریری، پورے صفحے کے طور پر یا موڈل یا سائیڈ پینل میں انتخاب کار کے طور پر۔"
+  document_title: 'میڈیا لائبریری اور فائل چننے والا'
+  page_description: 'تصاویر اور فائلیں اپ لوڈ کرنے، دیکھنے اور چننے کے لیے میڈیا لائبریری، پورے صفحے کے طور پر یا موڈل یا سائیڈ پینل میں انتخاب کار کے طور پر۔'
   page_icon: 'ph:bold/images'
   open:
     modal: 'ماڈل میں کھولیں'
@@ -65,7 +72,8 @@ ur:
 
 ja:
   page_title: メディアライブラリ
-  page_description: "画像やファイルをアップロード、閲覧、選択できるメディアライブラリ。全画面でも、モーダルやサイドパネルのピッカーとしても使えます。"
+  document_title: メディアライブラリとファイルピッカー
+  page_description: 画像やファイルをアップロード、閲覧、選択できるメディアライブラリ。全画面でも、モーダルやサイドパネルのピッカーとしても使えます。
   page_icon: 'ph:bold/images'
   open:
     modal: モーダルで開く
@@ -73,7 +81,8 @@ ja:
 
 ko:
   page_title: '미디어 라이브러리'
-  page_description: "이미지와 파일을 업로드하고 둘러보고 선택하는 미디어 라이브러리. 전체 페이지로, 또는 모달이나 사이드 패널의 선택기로 사용합니다."
+  document_title: '미디어 라이브러리 및 파일 선택기'
+  page_description: '이미지와 파일을 업로드하고 둘러보고 선택하는 미디어 라이브러리. 전체 페이지로, 또는 모달이나 사이드 패널의 선택기로 사용합니다.'
   page_icon: 'ph:bold/images'
   open:
     modal: '모달에서 열기'
@@ -81,7 +90,8 @@ ko:
 
 bn:
   page_title: 'মিডিয়া লাইব্রেরি'
-  page_description: "ছবি ও ফাইল আপলোড, ব্রাউজ ও বাছাই করার মিডিয়া লাইব্রেরি, পূর্ণ পেজ হিসেবে বা মোডাল বা পার্শ্ব প্যানেলে পিকার হিসেবে।"
+  document_title: 'মিডিয়া লাইব্রেরি এবং ফাইল পিকার'
+  page_description: 'ছবি ও ফাইল আপলোড, ব্রাউজ ও বাছাই করার মিডিয়া লাইব্রেরি, পূর্ণ পেজ হিসেবে বা মোডাল বা পার্শ্ব প্যানেলে পিকার হিসেবে।'
   page_icon: 'ph:bold/images'
   open:
     modal: 'মোডালে খুলুন'
@@ -89,7 +99,8 @@ bn:
 
 th:
   page_title: คลังสื่อ
-  page_description: "คลังสื่อสำหรับอัปโหลด เรียกดู และเลือกรูปภาพและไฟล์ ใช้เป็นหน้าเต็มหรือเปิดเป็นตัวเลือกในโมดัลหรือแผงด้านข้าง"
+  document_title: ห้องสมุดสื่อและการเลือกไฟล์
+  page_description: 'คลังสื่อสำหรับอัปโหลด เรียกดู และเลือกรูปภาพและไฟล์ ใช้เป็นหน้าเต็มหรือเปิดเป็นตัวเลือกในโมดัลหรือแผงด้านข้าง'
   page_icon: 'ph:bold/images'
   open:
     modal: เปิดในโมดัล
@@ -97,7 +108,8 @@ th:
 
 de:
   page_title: Medienbibliothek
-  page_description: "Eine Mediathek zum Hochladen, Durchsuchen und Auswählen von Bildern und Dateien, als ganze Seite oder als Auswahl in einem Modal oder Seitenpanel."
+  document_title: 'Medienbibliothek und Dateiauswahl'
+  page_description: 'Eine Mediathek zum Hochladen, Durchsuchen und Auswählen von Bildern und Dateien, als ganze Seite oder als Auswahl in einem Modal oder Seitenpanel.'
   page_icon: 'ph:bold/images'
   open:
     modal: 'In einem Modal öffnen'
@@ -105,7 +117,8 @@ de:
 
 fi:
   page_title: Mediakirjasto
-  page_description: "Mediakirjasto kuvien ja tiedostojen lataamiseen, selaamiseen ja valitsemiseen, koko sivuna tai valitsimena modaalissa tai sivupaneelissa."
+  document_title: 'Mediakirjasto ja tiedostonvalitsin'
+  page_description: 'Mediakirjasto kuvien ja tiedostojen lataamiseen, selaamiseen ja valitsemiseen, koko sivuna tai valitsimena modaalissa tai sivupaneelissa.'
   page_icon: 'ph:bold/images'
   open:
     modal: 'Avaa muokkausikkunassa'
@@ -113,7 +126,8 @@ fi:
 
 ru:
   page_title: 'Медиа библиотека'
-  page_description: "Медиатека для загрузки, просмотра и выбора изображений и файлов — на всю страницу или как средство выбора в модальном окне или боковой панели."
+  document_title: 'Медиа-библиотека и выбор файлов'
+  page_description: 'Медиатека для загрузки, просмотра и выбора изображений и файлов — на всю страницу или как средство выбора в модальном окне или боковой панели.'
   page_icon: 'ph:bold/images'
   open:
     modal: 'Открыть в модальном окне'
@@ -121,7 +135,8 @@ ru:
 
 pl:
   page_title: 'Biblioteka multimediów'
-  page_description: "Biblioteka mediów do wgrywania, przeglądania i wybierania obrazów oraz plików, jako pełna strona lub selektor w oknie modalnym albo panelu bocznym."
+  document_title: 'Biblioteka multimediów i wybór plików'
+  page_description: 'Biblioteka mediów do wgrywania, przeglądania i wybierania obrazów oraz plików, jako pełna strona lub selektor w oknie modalnym albo panelu bocznym.'
   page_icon: 'ph:bold/images'
   open:
     modal: 'Otwórz w oknie modalnym'
@@ -129,7 +144,8 @@ pl:
 
 es:
   page_title: 'Biblioteca de medios'
-  page_description: "Una mediateca para subir, explorar y elegir imágenes y archivos, como página completa o abierta como selector en un modal o un panel lateral."
+  document_title: 'Biblioteca de medios y selector de archivos'
+  page_description: 'Una mediateca para subir, explorar y elegir imágenes y archivos, como página completa o abierta como selector en un modal o un panel lateral.'
   page_icon: 'ph:bold/images'
   open:
     modal: 'Abrir en un modal'
@@ -137,7 +153,8 @@ es:
 
 it:
   page_title: 'Libreria multimediale'
-  page_description: "Una libreria multimediale per caricare, sfogliare e scegliere immagini e file, a pagina intera o aperta come selettore in un modale o pannello laterale."
+  document_title: 'Libreria multimediale e selettore di file'
+  page_description: 'Una libreria multimediale per caricare, sfogliare e scegliere immagini e file, a pagina intera o aperta come selettore in un modale o pannello laterale.'
   page_icon: 'ph:bold/images'
   open:
     modal: 'Apri in un modale'
@@ -145,7 +162,8 @@ it:
 
 pt_BR:
   page_title: 'Biblioteca de mídia'
-  page_description: "Uma biblioteca de mídia para enviar, navegar e escolher imagens e arquivos, em página inteira ou aberta como seletor num modal ou painel lateral."
+  document_title: 'Biblioteca de mídias e seletor de arquivos'
+  page_description: 'Uma biblioteca de mídia para enviar, navegar e escolher imagens e arquivos, em página inteira ou aberta como seletor num modal ou painel lateral.'
   page_icon: 'ph:bold/images'
   open:
     modal: 'Abrir em um modal'
@@ -153,7 +171,8 @@ pt_BR:
 
 tr:
   page_title: 'Medya kütüphanesi'
-  page_description: "Görsel ve dosya yüklemek, göz atmak ve seçmek için bir medya kütüphanesi; tam sayfa ya da modal veya yan panelde seçici olarak kullanılır."
+  document_title: 'Medya kütüphanesi ve dosya seçici'
+  page_description: 'Görsel ve dosya yüklemek, göz atmak ve seçmek için bir medya kütüphanesi; tam sayfa ya da modal veya yan panelde seçici olarak kullanılır.'
   page_icon: 'ph:bold/images'
   open:
     modal: 'Modalde aç'
@@ -161,7 +180,8 @@ tr:
 
 vi:
   page_title: 'Thư viện phương tiện'
-  page_description: "Thư viện phương tiện để tải lên, duyệt và chọn hình ảnh, tệp, dùng dạng toàn trang hoặc mở làm bộ chọn trong modal hay bảng bên."
+  document_title: 'Thư viện phương tiện và trình chọn tệp'
+  page_description: 'Thư viện phương tiện để tải lên, duyệt và chọn hình ảnh, tệp, dùng dạng toàn trang hoặc mở làm bộ chọn trong modal hay bảng bên.'
   page_icon: 'ph:bold/images'
   open:
     modal: 'Mở trong một hộp thoại'
@@ -169,7 +189,8 @@ vi:
 
 id:
   page_title: 'Perpustakaan media'
-  page_description: "Pustaka media untuk mengunggah, menelusuri, dan memilih gambar serta berkas, sebagai halaman penuh atau pemilih dalam modal atau panel samping."
+  document_title: 'Perpustakaan media dan pemilih file'
+  page_description: 'Pustaka media untuk mengunggah, menelusuri, dan memilih gambar serta berkas, sebagai halaman penuh atau pemilih dalam modal atau panel samping.'
   page_icon: 'ph:bold/images'
   open:
     modal: 'Buka dalam modal'
@@ -177,7 +198,8 @@ id:
 
 nl:
   page_title: Mediabibliotheek
-  page_description: "Een mediabibliotheek om afbeeldingen en bestanden te uploaden, door te bladeren en te kiezen, als volledige pagina of als kiezer in een modal of zijpaneel."
+  document_title: 'Mediabibliotheek en bestandskiezer'
+  page_description: 'Een mediabibliotheek om afbeeldingen en bestanden te uploaden, door te bladeren en te kiezen, als volledige pagina of als kiezer in een modal of zijpaneel.'
   page_icon: 'ph:bold/images'
   open:
     modal: 'Open in een popup'
