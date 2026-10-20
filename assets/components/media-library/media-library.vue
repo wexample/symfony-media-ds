@@ -92,7 +92,8 @@ export default {
       const response = await fetch(`${this.listUrl}?${query}`, { headers: { Accept: 'application/json' } });
       const data = unwrapApiEnvelope(await response.json());
 
-      return { items: data.items, total: data.pagination?.total ?? data.items.length };
+      // Each item comes as every list of the api gives it, `{type, entity}`.
+      return { items: data.items.map((item) => item.entity), total: data.pagination?.total ?? data.items.length };
     },
 
     onNavigate() {
