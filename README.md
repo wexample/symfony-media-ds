@@ -1,6 +1,6 @@
 # symfony-media-ds
 
-Version: 3.0.2
+Version: 3.0.3
 
 ## The library page
 
@@ -52,10 +52,10 @@ The suite includes packages for configuration management, file handling, prompts
 
 - php: >=8.5
 - symfony/form: ^7.4 || ^8.0
-- wexample/symfony-design-system: >=38.0.0
-- wexample/symfony-helpers: >=17.0.0
-- wexample/symfony-loader: >=23.3.0
-- wexample/symfony-media: >=4.0.0
+- wexample/symfony-design-system: >=39.0.0
+- wexample/symfony-helpers: >=18.0.0
+- wexample/symfony-loader: >=24.0.0
+- wexample/symfony-media: >=5.0.0
 
 ## Versioning & Compatibility Policy
 
