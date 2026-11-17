@@ -1,6 +1,6 @@
 # symfony-media-ds
 
-Version: 3.0.20
+Version: 3.0.21
 
 Design-system side of symfony-media: the library page, browsed, uploaded into and arranged, and a form field picking media from it
 
